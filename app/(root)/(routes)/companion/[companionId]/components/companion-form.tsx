@@ -68,7 +68,7 @@ export const CompanionForm = ({
           onSubmit={form.handleSubmit(onSubmit)}
           className='space-y-8 pb-10'
         >
-          <div className='space-y-2 w-full col-span-2'>
+          <div className='space-y-2 w-full '>
             <div>
               <h3 className='text-lg font-medium'>General Information</h3>
               <p className='text-sm text-muted-foreground'>
@@ -80,7 +80,7 @@ export const CompanionForm = ({
           <FormField
             name='src'
             render={({ field }) => (
-              <FormItem className='flex flex-col items-center justify-center space-y-4 col-span-2'>
+              <FormItem className='flex flex-col items-center justify-center space-y-4 '>
                 <FormControl>Image Upload Component</FormControl>
                 <FormMessage />
               </FormItem>
