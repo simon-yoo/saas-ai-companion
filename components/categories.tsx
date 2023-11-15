@@ -6,7 +6,7 @@ interface CategorisProps {
   data: Category[]
 }
 
-const Categories = () => {
+const Categories = ({ data }: CategorisProps) => {
   return <div>categories</div>
 }
 
