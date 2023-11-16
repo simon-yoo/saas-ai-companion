@@ -37,7 +37,7 @@ export const ImageUpload = ({
           <div className='relative h-40 w-40'>
             <Image
               fill
-              src='/placeholder.svg'
+              src={value || '/placeholder.svg'}
               alt='Upload'
               className='rounded-lg object-cover'
             />
