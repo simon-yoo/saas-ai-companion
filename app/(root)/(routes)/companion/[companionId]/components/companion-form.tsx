@@ -219,12 +219,36 @@ export const CompanionForm = ({
                     className='bg-background resize-none'
                     rows={7}
                     disabled={isLoading}
-                    placeholder=''
+                    placeholder={PREAMBLE}
                     {...field}
                   />
                 </FormControl>
                 <FormDescription>
-                  Short description for your AI Companion.
+                  Describe in detail your companion&apos; backstroy and relevant
+                  details.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name='seed'
+            control={form.control}
+            render={({ field }) => (
+              <FormItem className='col-span-2 md:col-span-1'>
+                <FormLabel>Example Conversations</FormLabel>
+                <FormControl>
+                  <Textarea
+                    className='bg-background resize-none'
+                    rows={7}
+                    disabled={isLoading}
+                    placeholder={SEED_CHAT}
+                    {...field}
+                  />
+                </FormControl>
+                <FormDescription>
+                  Describe in detail your companion&apos; backstroy and relevant
+                  details.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
