@@ -3,6 +3,8 @@
 import { ChatRequestOptions } from 'ai'
 import { ChangeEvent, FormEvent } from 'react'
 import { Input } from '@/components/ui/input'
+import { Button } from './ui/button'
+import { SendHorizonal } from 'lucide-react'
 
 interface ChatFormProps {
   isLoading: boolean
@@ -33,6 +35,8 @@ const ChatForm = ({
         placeholder='Type a message'
         className='rounded-lg bg-primary/10'
       />
+      <Button disabled={isLoading} variant='ghost' />
+      <SendHorizonal className='h-6 w-6' />
     </form>
   )
 }
