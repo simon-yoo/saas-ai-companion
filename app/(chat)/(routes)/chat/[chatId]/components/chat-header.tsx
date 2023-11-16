@@ -22,7 +22,7 @@ const ChatHeader = ({ companion }: ChatHeaderProps) => {
         <Button onClick={() => router.back()} size='icon' variant='ghost'>
           <ChevronLeft className='h-8 w-8' />
         </Button>
-        <BotAvatar />
+        <BotAvatar src={companion.src} />
       </div>
     </div>
   )
