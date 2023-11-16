@@ -1,3 +1,5 @@
+'use client'
+
 import { Companion } from '@prisma/client'
 import React from 'react'
 
@@ -11,5 +13,9 @@ export const ChatMessages = ({
   messages,
   companion,
 }: ChatMessagesProps) => {
-  return <div>ChatMessages</div>
+  return (
+    <div className='flex-1 overflow-y-auto pr-4'>
+      <ChatMessage />
+    </div>
+  )
 }
