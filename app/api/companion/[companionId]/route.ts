@@ -2,11 +2,18 @@ import prismadb from '@/lib/prismadb'
 import { currentUser } from '@clerk/nextjs'
 import { NextResponse } from 'next/server'
 
-export async function PATCH(req: Request) {
+export async function PATCH(
+  req: Request,
+  { params }: { params: { companionId: string } }
+) {
   try {
     const body = await req.json()
     const user = await currentUser()
     const { src, name, description, seed, instructions, categoryId } = body
+
+    if (!params.companionId) {
+      return new NextResponse('Companion ID is required', { status: 400 })
+    }
 
     if (!user || !user.id || !user.firstName) {
       return new NextResponse('Unauthorized', { status: 401 })
@@ -25,7 +32,10 @@ export async function PATCH(req: Request) {
 
     // TODO: Check for subscription
 
-    const companion = await prismadb.companion.create({
+    const companion = await prismadb.companion.update({
+      where: {
+        id: params.companionId,
+      },
       data: {
         categoryId,
         userId: user.id,
@@ -40,7 +50,7 @@ export async function PATCH(req: Request) {
 
     return NextResponse.json(companion)
   } catch (error) {
-    console.log('[COMPANION_POST', error)
+    console.log('[COMPANION_PATCH', error)
     return new NextResponse('Internal Error', { status: 500 })
   }
 }
