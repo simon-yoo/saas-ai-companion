@@ -13,6 +13,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Separator } from '@/components/ui/separator'
+import { ImageUpload } from '@/components/image-upload'
 interface CompanionFormProps {
   categories: Category[]
   initialData: Companion | null
@@ -81,7 +82,13 @@ export const CompanionForm = ({
             name='src'
             render={({ field }) => (
               <FormItem className='flex flex-col items-center justify-center space-y-4 '>
-                <FormControl>Image Upload Component</FormControl>
+                <FormControl>
+                  <ImageUpload
+                    disabled={isLoading}
+                    onChange={field.onChange}
+                    value={field.value}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
