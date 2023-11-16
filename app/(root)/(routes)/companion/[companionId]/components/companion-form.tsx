@@ -113,6 +113,9 @@ export const CompanionForm = ({
                       {...field}
                     />
                   </FormControl>
+                  <FormDescription>
+                    Short description for your AI Companion.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
