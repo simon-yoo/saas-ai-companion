@@ -17,6 +17,13 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { ImageUpload } from '@/components/image-upload'
 import { Input } from '@/components/ui/input'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+  SelectTrigger,
+} from '@/components/ui/select'
 interface CompanionFormProps {
   categories: Category[]
   initialData: Companion | null
@@ -39,7 +46,7 @@ const formSchema = z.object({
     message: 'Image is required',
   }),
 
-  catrgoryId: z.string().min(1, {
+  categoryId: z.string().min(1, {
     message: 'Category is required',
   }),
 })
@@ -56,7 +63,7 @@ export const CompanionForm = ({
       instructions: '',
       seed: '',
       src: '',
-      catrgoryId: undefined,
+      categoryId: undefined,
     },
   })
 
@@ -137,6 +144,40 @@ export const CompanionForm = ({
                     Short description for your AI Companion.
                   </FormDescription>
                   <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              name='categoryId'
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Category</FormLabel>
+                  <Select
+                    disabled={isLoading}
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger className='bg-background'>
+                        <SelectValue
+                          defaultValue={field.value}
+                          placeholder='Select a category'
+                        />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {categories.map((category) => (
+                        <SelectItem key={category.id} value={category.id}>
+                          {category.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormDescription>
+                    Select a category for your AI
+                  </FormDescription>
                 </FormItem>
               )}
             />
