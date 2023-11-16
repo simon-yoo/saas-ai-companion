@@ -2,6 +2,7 @@
 
 import { Companion } from '@prisma/client'
 import React from 'react'
+import { ChatMessage } from './chat-message'
 
 interface ChatMessagesProps {
   isLoading: boolean
