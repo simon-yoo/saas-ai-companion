@@ -18,6 +18,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { useToast } from '@/components/ui/use-toast'
+import axios from 'axios'
 
 interface ChatHeaderProps {
   companion: Companion & {
@@ -30,7 +32,22 @@ interface ChatHeaderProps {
 const ChatHeader = ({ companion }: ChatHeaderProps) => {
   const router = useRouter()
   const { user } = useUser()
+  const { toast } = useToast()
 
+  const onDelete = async () => {
+    try {
+      await axios.delete(`/api/companions/${companion.id}`)
+
+      toast({
+        description: 'Success',
+      })
+    } catch (error) {
+      toast({
+        description: 'Something went wrong',
+        variant: 'destructive',
+      })
+    }
+  }
   return (
     <div className='flex w-full justify-between items-center border-b border-primary/10 pb-4'>
       <div className='flex gap-x-2 items-center'>
@@ -59,11 +76,13 @@ const ChatHeader = ({ companion }: ChatHeaderProps) => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align='end'>
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => router.push(`/companion/${companion.id}`)}
+            >
               <Edit className='w-4 h-4 mr-2' />
               Edit
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={onDelete}>
               <Trash className='w-4 h-4 mr-2' />
               Delete
             </DropdownMenuItem>
