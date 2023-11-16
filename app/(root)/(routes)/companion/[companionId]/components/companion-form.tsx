@@ -182,6 +182,15 @@ export const CompanionForm = ({
               )}
             />
           </div>
+          <div className='space-y-2 w-fulll'>
+            <div>
+              <h3 className='text-lg font-medium'>Configuration</h3>
+              <p className='text-sm text-muted-foreground'>
+                Detailed instructions for AI Behaviour
+              </p>
+            </div>
+            <Separator className='bg-primary/10' />
+          </div>
         </form>
       </Form>
     </div>
