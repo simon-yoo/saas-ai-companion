@@ -197,6 +197,7 @@ export const CompanionForm = ({
                   <FormDescription>
                     Select a category for your AI
                   </FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
             />
