@@ -2,6 +2,7 @@
 
 import { ChatRequestOptions } from 'ai'
 import { ChangeEvent, FormEvent } from 'react'
+import { Input } from '@/components/ui/input'
 
 interface ChatFormProps {
   isLoading: boolean
@@ -20,7 +21,20 @@ const ChatForm = ({
   handleInputChange,
   onSubmit,
 }: ChatFormProps) => {
-  return <div>chat-form</div>
+  return (
+    <form
+      onSubmit={onSubmit}
+      className='border-t border-primary/10 py-4 flex items-center gap-x-2'
+    >
+      <Input
+        disabled={isLoading}
+        value={input}
+        onChange={handleInputChange}
+        placeholder='Type a message'
+        className='rounded-lg bg-primary/10'
+      />
+    </form>
+  )
 }
 
 export default ChatForm
