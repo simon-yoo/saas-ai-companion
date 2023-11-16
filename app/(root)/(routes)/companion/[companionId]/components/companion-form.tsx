@@ -283,8 +283,13 @@ export const CompanionForm = ({
             )}
           />
           <div className='w-full flex justify-center'>
-            <Button size='lg' disabled={isLoading}>
+            <Button
+              size='lg'
+              disabled={isLoading}
+              onClick={() => router.refresh()}
+            >
               {initialData ? 'Edit your companion' : 'Create your companion'}
+
               <Wand2 className='w-4 h-4 ml-2' />
             </Button>
           </div>
