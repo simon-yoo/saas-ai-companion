@@ -22,6 +22,11 @@ export const ChatMessages = ({
         role='system'
         content={`Hello, I am ${companion.name}, ${companion.description}`}
       />
+      <ChatMessage
+        isLoading={isLoading}
+        role='user'
+        content={`Hello, I am ${companion.name}, ${companion.description}`}
+      />
     </div>
   )
 }
