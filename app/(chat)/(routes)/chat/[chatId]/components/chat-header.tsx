@@ -10,7 +10,7 @@ import {
   Trash,
 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { BotAvatar } from './bot-avatar'
+import { BotAvatar } from '../../../../../../components/bot-avatar'
 import { useUser } from '@clerk/nextjs'
 import {
   DropdownMenu,
