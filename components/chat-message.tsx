@@ -2,7 +2,7 @@ import React from 'react'
 import { useToast } from '@/components/ui/use-toast'
 import { useTheme } from 'next-themes'
 import { cn } from '@/lib/utils'
-import { BotAvatar } from '@/app/(chat)/(routes)/chat/[chatId]/components/bot-avatar'
+import { BotAvatar } from '@/components/bot-avatar'
 import { BeatLoader } from 'react-spinners'
 
 export interface ChatMessageProps {
