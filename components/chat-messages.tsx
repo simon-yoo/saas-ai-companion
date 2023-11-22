@@ -2,12 +2,12 @@
 
 import { Companion } from '@prisma/client'
 import React from 'react'
-import { ChatMessage } from '@/components/chat-message'
+import { ChatMessage, ChatMessageProps } from '@/components/chat-message'
 
 interface ChatMessagesProps {
   isLoading: boolean
   companion: Companion
-  messages: any[]
+  messages: ChatMessageProps[]
 }
 export const ChatMessages = ({
   isLoading,
