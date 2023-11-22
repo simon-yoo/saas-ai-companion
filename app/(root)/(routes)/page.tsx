@@ -1,6 +1,6 @@
 import SearchInput from '@/components/SearchInput'
-import Categories from '@/components/categories'
-import Companions from '@/components/companions'
+import Categories from '@/components/Categories'
+import Companions from '@/components/Companions'
 import prismadb from '@/lib/prismadb'
 
 interface RootPageProps {
