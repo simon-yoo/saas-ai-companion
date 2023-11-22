@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { BotAvatar } from '@/components/bot-avatar'
 import { BeatLoader } from 'react-spinners'
 import { UserAvatar } from '@/components/user-avatar'
+import { Button } from '@/components/ui/button'
 
 export interface ChatMessageProps {
   role: 'system' | 'user'
@@ -48,6 +49,14 @@ export const ChatMessage = ({
         )}
       </div>
       {role === 'user' && <UserAvatar />}
+      {role !== 'user' && !isLoading && (
+        <Button
+          onClick={onCopu}
+          className='opacity-0 group-hover:opacity-100 transition'
+          size='icon'
+          variant='ghost'
+        ></Button>
+      )}
     </div>
   )
 }
