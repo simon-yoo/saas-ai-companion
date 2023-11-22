@@ -6,6 +6,7 @@ import { BotAvatar } from '@/components/bot-avatar'
 import { BeatLoader } from 'react-spinners'
 import { UserAvatar } from '@/components/user-avatar'
 import { Button } from '@/components/ui/button'
+import { Copy } from 'lucide-react'
 
 export interface ChatMessageProps {
   role: 'system' | 'user'
@@ -55,7 +56,9 @@ export const ChatMessage = ({
           className='opacity-0 group-hover:opacity-100 transition'
           size='icon'
           variant='ghost'
-        ></Button>
+        >
+          <Copy className='w-4 h-4' />
+        </Button>
       )}
     </div>
   )
