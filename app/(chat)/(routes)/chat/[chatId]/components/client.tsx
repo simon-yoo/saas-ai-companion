@@ -5,10 +5,10 @@ import { FormEvent, useState } from 'react'
 import { Companion, Message } from '@prisma/client'
 import { useRouter } from 'next/navigation'
 
-import ChatForm from '@/components/chat-form'
+import ChatForm from '@/components/ChatForm'
 import ChatHeader from './chat-header'
-import { ChatMessages } from '@/components/chat-messages'
-import { ChatMessageProps } from '@/components/chat-message'
+import { ChatMessages } from '@/components/ChatMessages'
+import { ChatMessageProps } from '@/components/ChatMessage'
 
 interface ChatClientProps {
   companion: Companion & {
@@ -22,7 +22,7 @@ interface ChatClientProps {
 export const ChatClient = ({ companion }: ChatClientProps) => {
   const router = useRouter()
   const [messages, setMessages] = useState<ChatMessageProps[]>(
-    companion.messages
+    companion?.messages
   )
 
   const { input, isLoading, handleInputChange, handleSubmit, setInput } =
