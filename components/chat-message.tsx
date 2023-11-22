@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 import { cn } from '@/lib/utils'
 import { BotAvatar } from '@/components/bot-avatar'
 import { BeatLoader } from 'react-spinners'
-import { UserAvatar } from './user-avatar'
+import { UserAvatar } from '@/components/user-avatar'
 
 export interface ChatMessageProps {
   role: 'system' | 'user'
