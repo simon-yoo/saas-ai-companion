@@ -6,7 +6,7 @@ import { Companion, Message } from '@prisma/client'
 import { useRouter } from 'next/navigation'
 
 import ChatForm from '@/components/ChatForm'
-import ChatHeader from './chat-header'
+import ChatHeader from './ChatHeader'
 import { ChatMessages } from '@/components/ChatMessages'
 import { ChatMessageProps } from '@/components/ChatMessage'
 
