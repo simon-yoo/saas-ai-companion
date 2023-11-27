@@ -14,6 +14,7 @@ export const ChatMessages = ({
   messages = [],
   companion,
 }: ChatMessagesProps) => {
+  // scrolls down message when new message pops up
   const scrollRef = useRef<ElementRef<'div'>>(null)
 
   const [fakeLoading, setFakeLoading] = useState(
