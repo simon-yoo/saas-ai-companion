@@ -11,7 +11,7 @@ interface ChatMessagesProps {
 }
 export const ChatMessages = ({
   isLoading,
-  messages,
+  messages = [],
   companion,
 }: ChatMessagesProps) => {
   return (
