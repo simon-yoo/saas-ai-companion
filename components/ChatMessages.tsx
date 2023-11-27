@@ -21,6 +21,7 @@ export const ChatMessages = ({
     messages.length === 0 ? true : false
   )
 
+  // loading effect
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFakeLoading(false)
@@ -30,6 +31,11 @@ export const ChatMessages = ({
       clearTimeout(timeout)
     }
   }, [])
+
+  // scroll behaviour
+  useEffect(() => {
+    scrollRef?.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages.length])
 
   return (
     <div className='flex-1 overflow-y-auto pr-4'>
