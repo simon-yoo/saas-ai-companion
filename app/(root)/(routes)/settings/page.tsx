@@ -1,3 +1,4 @@
+import SubscriptionButton from '@/components/SubscriptionButton'
 import { checkSubscription } from '@/lib/subscription'
 import React from 'react'
 
@@ -12,6 +13,7 @@ const page = async () => {
           ? 'You are currently on a Pro plan.'
           : 'You are currently on a fee plan.'}
       </div>
+      <SubscriptionButton isPro={isPro} />
     </div>
   )
 }
