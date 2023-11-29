@@ -7,8 +7,8 @@ import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { ModeToggle } from './ModeToggle'
-import MobileSidebar from '@/components/MobileSidebar'
+import { ModeToggle } from './mode-toggle'
+import MobileSidebar from '@/components/mobile-sidebar'
 import { useProModal } from '@/hooks/use-pro-modal'
 
 const font = Poppins({
