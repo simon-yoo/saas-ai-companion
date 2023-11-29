@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ModeToggle } from './ModeToggle'
 import MobileSidebar from '@/components/MobileSidebar'
-import { usePropModal } from '@/hooks/use-pro-modal'
+import { useProModal } from '@/hooks/use-pro-modal'
 
 const font = Poppins({
   weight: '600',
@@ -17,7 +17,7 @@ const font = Poppins({
 })
 
 const Navbar = () => {
-  const proModal = usePropModal()
+  const proModal = useProModal()
 
   return (
     <div className='fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16'>
