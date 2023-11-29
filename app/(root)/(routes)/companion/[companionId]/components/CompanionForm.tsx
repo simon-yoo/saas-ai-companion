@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Separator } from '@/components/ui/separator'
-import { ImageUpload } from '@/components/ImageUpload'
+import { ImageUpload } from '@/components/image-upload'
 import { Input } from '@/components/ui/input'
 import {
   Select,
