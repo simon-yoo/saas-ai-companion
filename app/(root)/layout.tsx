@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar'
-import Sidebar from '@/components/Sidebar'
+import Sidebar from '@/components/sidebar'
 import { checkSubscription } from '@/lib/subscription'
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
