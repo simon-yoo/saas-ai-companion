@@ -14,10 +14,10 @@ import {
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { useToast } from '@/components/ui/use-toast'
-import { usePropModal } from '@/hooks/use-pro-modal'
+import { useProModal } from '@/hooks/use-pro-modal'
 
 export const ProModal = () => {
-  const proModal = usePropModal()
+  const proModal = useProModal()
   const [isMounted, setIsMounted] = useState(false)
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
