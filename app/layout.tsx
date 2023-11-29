@@ -4,8 +4,8 @@ import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/toaster'
-import { ThemeProvider } from '@/components/ThemeProvider'
-import { ProModal } from '@/components/ProModal'
+import { ThemeProvider } from '@/components/theme-provider'
+import { ProModal } from '@/components/pro-modal'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
