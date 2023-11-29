@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 
 import ChatForm from '@/components/chat-form'
 import ChatHeader from './chat-header'
-import { ChatMessages } from '@/components/ChatMessages'
+import { ChatMessages } from '@/components/chat-messages'
 import { ChatMessageProps } from '@/components/chat-message'
 
 interface ChatClientProps {
