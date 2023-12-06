@@ -144,7 +144,7 @@ export async function POST(
       })
     }
 
-    return new StreamingTextResponse(s)
+    return NextResponse.json(response)
   } catch (error) {
     return new NextResponse('Internal Error', { status: 500 })
   }
